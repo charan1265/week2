@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>User Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" action="submit.html" method="post">
+<fieldset align="center">
+            <legend align="center">User Registration</legend>
+
+            <!-- Name Field -->
+            <label for="name">Name:</label>
+<br>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+<br><br>
+           <!-- Email Field -->
+            <label for="email">Email:</label>
+<br>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+<br><br>
+            <!-- Username Field -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="johndoe" required>
+<br><br>
+            <!-- Password Field -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+<br><br>
+
+            <!-- Password Confirmation Field -->
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="********" required>
+<br><br>
+
+            <button type="submit">Register</button>
+</fieldset>
+        </form>
+    </div>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $username = $_POST["username"];
+
+        // Perform additional validation and database operations as needed
+
+        // Redirect to confirmation page
+        header("Location: C:\Users\OMKAR REDDY\Desktop\submit.html");
+        exit();
+    }
+    ?>
+</body>
+</html>
